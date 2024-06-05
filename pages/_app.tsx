@@ -9,19 +9,10 @@ import {
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-// Extend DefaultConfigProps type if needed
-type DefaultConfigProps = {
-  alchemyId?: string;
-  walletConnectProjectId: string;
-  appName: string;
-  appDescription: string;
-  // Add other properties here if needed
-};
-
+// Configure with getDefaultConfig
 const config = createConfig(
   getDefaultConfig({
     // Required API Keys
-    alchemyId: "MzUaa0A87yexjd8UKcHm8HIr1f4aghxT",
     walletConnectProjectId: "a8024e8262cb4e7102941a3577b5a5c0",
 
     // Required
