@@ -9,7 +9,6 @@ import {
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-// Configure with getDefaultConfig
 const config = createConfig(
   getDefaultConfig({
     // Required API Keys
