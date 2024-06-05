@@ -34,7 +34,7 @@ const CryptoPricesPage = () => {
           {
             params: {
               vs_currency: "usd",
-              per_page: 20, // Number of cryptocurrencies to fetch
+              // per_page: 20, // Number of cryptocurrencies to fetch
               page: 1,
               sparkline: false,
             },
