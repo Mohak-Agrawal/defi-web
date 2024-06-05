@@ -11,13 +11,8 @@ import Link from "next/link";
 
 const config = createConfig(
   getDefaultConfig({
-    // Required API Keys
     walletConnectProjectId: "a8024e8262cb4e7102941a3577b5a5c0",
-
-    // Required
     appName: "0x Next.js Demo App",
-
-    // Optional
     appDescription: "A Next.js demo app for 0x Swap API and ConnectKit",
   })
 );
@@ -25,6 +20,9 @@ const config = createConfig(
 export default function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
+
+  // Ensure Component is a valid React component
+  if (!Component) return null;
 
   return (
     <div>
@@ -51,6 +49,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <ConnectKitButton />
           </header>
 
+          {/* Ensure Component is only rendered when mounted is true */}
           {mounted && <Component {...pageProps} />}
         </ConnectKitProvider>
       </WagmiConfig>
