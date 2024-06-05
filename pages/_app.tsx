@@ -9,6 +9,15 @@ import {
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+// Extend DefaultConfigProps type if needed
+type DefaultConfigProps = {
+  alchemyId?: string;
+  walletConnectProjectId: string;
+  appName: string;
+  appDescription: string;
+  // Add other properties here if needed
+};
+
 const config = createConfig(
   getDefaultConfig({
     // Required API Keys
@@ -31,7 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div>
       <WagmiConfig config={config}>
         <ConnectKitProvider>
-          <header className="sticky top-0 z-10  w-full p-4 m-0 flex flex-row items-center justify-between bg-gradient-to-r from-blue-400 to-indigo-600 bg-opacity-50 backdrop-filter backdrop-blur-lg">
+          <header className="sticky top-0 z-10 w-full p-4 m-0 flex flex-row items-center justify-between bg-gradient-to-r from-blue-400 to-indigo-600 bg-opacity-50 backdrop-filter backdrop-blur-lg">
             <Link href="/">
               <h1 className="text-white font-bold text-2xl cursor-pointer">
                 DeFi Application
